@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(/images/Main\ Background.png);
+    background-size: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    align-items: center;
+}
+
+.social {
+flex: 1;
+
+}
+
+.social-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.social-list li {
+    padding: 2rem;
+}
+
+.nav-menu {
+ flex: 1;
+}
+
+.menu-list {
+    border: solid 1px gold;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.menu-list li {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-size: 18px;
+    text-align: center;
+}
+
+.newsletter {
+ flex: 1;
+ margin-left: auto;
+ border: 1px solid red;
+ display:flex;
+ justify-content: center;
+
+}
+
+
+.newsletter input {
+    box-sizing: border-box;
+    background: #C4C4C4;
+    border: 1px solid #000000;
+    width: 131px;
+    height: 29px;
+
+}
+
+.newsletter button {
+    box-sizing: border-box;
+    background: #B64B4B;
+    width: 75px;
+    height: 29px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    width: 295px;
+    height: 238px;
+    top: 177px;
+}
+
+.tagline{
+    display: flex;
+    justify-content: center;
+}
+
+.step-inside{
+    display: flex;
+    justify-content: center;
+}
