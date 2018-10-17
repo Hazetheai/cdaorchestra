@@ -3,15 +3,8 @@
     padding: 0;
 }
 
-html { 
-    background: url(./images/Main\ Background.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
-body {
+body, html {
+    height: 100%;
     font-family: 'Montserrat', sans-serif;
     --primary-color: #861B1B;
     --secondary-color: #B64B4B;
@@ -20,14 +13,15 @@ body {
 
 }
 
-
-
 header {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding-top: 1rem;
     /* border: 1px solid black; */
     align-items: center;
+    z-index: 10;
 }
 
 .social {
@@ -111,7 +105,6 @@ padding-left: 1rem;
 .newsletter {
  flex: 1;
  margin-left: auto;
- /* border: 1px solid red; */
  display:flex;
  justify-content: space-around;
  padding-top: -15px;
@@ -133,6 +126,134 @@ padding-left: 1rem;
     width: 75px;
     height: 29px;
 }
+
+.logo {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.logo img {
+    padding-top: 3em;
+    width: 14em;
+    height: 14em;
+    top: 177px;
+    opacity: .9;
+}
+
+.tagline{
+    color: var(--positive);
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.step-inside{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+
+#more-arrows {
+    width: 75px;
+    height: 65px;
+    
+  }
+  #more-arrows:hover polygon {
+    fill: var(--primary-color);
+    transition: all .2s ease-out;
+  }
+  #more-arrows:hover polygon.arrow-bottom {
+    transform: translateY(-18px);
+  }
+  #more-arrows:hover polygon.arrow-top {
+    transform: translateY(18px);
+  }
+  
+  polygon {
+    fill: var(--primary-color);
+    transition: all .2s ease-out;
+  }
+  polygon.arrow-middle {
+    opacity: 0.75;
+  }
+  polygon.arrow-top {
+    opacity: 0.5;
+  }
+
+
+.pimg1, .pimg2, .pimg3{
+    position: relative;
+    opacity: .7;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Set to scroll to remove Parralax */
+    background-attachment: fixed;
+}
+
+.pimg1 {
+    opacity: 1;
+}
+
+.pimg1 {
+    background-image: url(/images/Main\ Background.png);
+    /* max-width: 100%; */
+    min-height: 100vh;
+}
+
+.pimg1-2 {
+    -webkit-box-shadow: inset 0px -200px 300px 79px rgba(255,255,255,1);
+    -moz-box-shadow: inset 0px -200px 300px 79px rgba(255,255,255,1);
+         box-shadow: inset 0px -200px 300px 79px rgba(255,255,255,1);
+}
+
+.pimg2 {
+    background-image: url(/images/CDAO\ Cover2.png);
+    min-height: 400px;
+}
+
+.pimg3 {
+    background-image: url(/images/CDAO\ Cover3.png);
+    min-height: 400px;
+}
+
+.section {
+    padding: 50px 80px;
+    text-align: center;
+}
+
+.section-dark {
+    background-color: #282e34;
+}
+
+.ptext {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    color: var(--negative);
+}
+
+.ptext .border {
+    background-color: #282e34;
+    color: var(--positive);
+}
+
+
+@media (max-width:568px) {
+    .pimg1, .pimg2, .pimg3 {
+        background-attachment: scroll;
+    }
+}
+
+
+
+
 
 /* Sticky Social Sidebar */
 
@@ -214,66 +335,63 @@ padding-left: 1rem;
   .float-ig {
     top: 325px;
   }
-  
-  
 
-
-
-.logo {
+  .sponsors {
     display: flex;
     justify-content: center;
-}
-
-.logo img {
-    padding-top: 3em;
-    width: 14em;
-    height: 14em;
-    top: 177px;
-    opacity: .9;
-}
-
-.tagline{
-    color: var(--positive);
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-}
-
-.step-inside{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    flex: 1;
     align-items: center;
-    margin-top: 4rem;
+    min-height: 80px;
 }
 
 
-#more-arrows {
+  .sponsors .arts{
+      background-image: url(/images/arts-council.png);
+      background-size: 75px, 65px;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 0 40px;
+      max-width: 75px;
+      width: 75px;
+      min-height: 80px;
+      opacity: .4;
+  }
+
+  .sponsors .cimc{
+    background-image: url(/images/CIMC.png);
+    background-size: 75px, 65px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0 40px;
     width: 75px;
-    height: 65px;
+    min-height: 65px;
+    opacity: .4;
+}
+
+
+.sponsors .plugd{
+    background-image: url(/images/plugd.png);
+    background-size: 75px, 65px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0 40px;
+    width: 75px;
+    min-height: 65px;
+    opacity: .4;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
     
-  }
-  #more-arrows:hover polygon {
-    fill: var(--primary-color);
-    transition: all .2s ease-out;
-  }
-  #more-arrows:hover polygon.arrow-bottom {
-    transform: translateY(-18px);
-  }
-  #more-arrows:hover polygon.arrow-top {
-    transform: translateY(18px);
-  }
-  
-  polygon {
-    fill: var(--primary-color);
-    transition: all .2s ease-out;
-  }
-  polygon.arrow-middle {
-    opacity: 0.75;
-  }
-  polygon.arrow-top {
-    opacity: 0.5;
-  }
+
+
+
+
+
+
 
 
