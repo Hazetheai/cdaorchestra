@@ -76,7 +76,7 @@ padding-left: 1rem;
 .nav-menu ul {
     display: flex;
     list-style-type: none;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border-top: var(--secondary-color) solid 4px;
 
@@ -102,7 +102,22 @@ padding-left: 1rem;
     color: var(--secondary-color);
 }
 
+@media only screen and (max-width: 320px) {
+    #gallery {
+        padding: 0;
+    }
+    #myImg {
+        max-width: 270px;
+        padding: 0;
+        margin: 0;
+    }
+}
+
 @media only screen and (max-width: 450px) {
+
+    header {
+        padding: 0;
+    }
    
     .nav-menu {
         margin: 0;
@@ -113,11 +128,29 @@ padding-left: 1rem;
     .nav-menu ul {
         align-items: center;
         flex-direction: column;
-        background-color: #000;
-        animation: shimmy 3000ms;
-        padding-bottom: 10vh;
+        background-color: var(--negative);
+        border-top: none;
+        border-radius: 3%;
+        /* padding-bottom: 10vh; */
+        z-index: 99;
+    }
 
-       
+    .menu-list {
+        height: 100vh;
+    }
+
+    .hide {
+        transform: translate(0, -100vh);
+    }
+
+    .slide {
+        animation: shimmy 1000ms;
+        
+    }
+
+    .blur {
+        transition-delay: 300ms;
+        filter: blur(2px);
     }
 
     @keyframes shimmy {
@@ -137,7 +170,7 @@ padding-left: 1rem;
     }
 
     .nav-menu ul li {
-        padding-top: 2em;
+        padding: 1em;
     }
 
 
@@ -150,8 +183,10 @@ padding-left: 1rem;
 #nav-icon1{
     width: 60px;
     height: 45px;
-    position: relative;
-    margin: 0 auto;
+    position: fixed;
+    top: 2vh;
+    right: 5vw;
+    margin: 0 2vw 2vw auto;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);

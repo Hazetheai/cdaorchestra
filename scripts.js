@@ -14,12 +14,35 @@
 
 // Hamburger
 const ham = document.querySelector('#nav-icon1');
+const navUl = document.querySelector('.menu-list');
+const section = document.querySelectorAll('.section');
+const pimg = document.querySelectorAll('.pimg');
+const myImg = document.querySelectorAll('#myImg');
+const menuItem = document.querySelectorAll(".menu-item");
+
+
 
 function toggleHam(){
     ham.classList.toggle("open");
+    navUl.classList.toggle("slide");
+    navUl.classList.toggle("hide");
+    section.forEach(el => el.classList.toggle("blur"));
+    pimg.forEach(el => el.classList.toggle("blur"));
+    myImg.forEach(el => el.classList.toggle("blur"));
+    // navUl.style.transform
 }
 
+function detectSize() {
+    if(window.innerWidth <= 450) {
+        navUl.classList.add("hide");
+    } else navUl.classList.remove("hide");
+}
+
+//need to address bug where if mobile menu is open and window is made bigger, menu disappears
+window.addEventListener('resize', detectSize);
+menuItem.forEach(el => el.addEventListener("click", toggleHam));
 ham.addEventListener('click', toggleHam);
+ham.addEventListener('touchstart', toggleHam);
 
 
 // $(document).ready(function() {
